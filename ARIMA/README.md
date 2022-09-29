@@ -46,9 +46,22 @@ So final arima model will look like, <br>
 
 An ARIMA model is one where the time series was differenced at least once to make it stationary and you can combine the AR and the MA terms, SO the equation becomes <br>
 
-Predicted Yt = Constant + Linear combination Lags of Y (upto p lags) + Linear Combination of Lagged forecast errors (upto q lags) <br>
+<b>Predicted Yt = Constant + Linear combination Lags of Y (upto p lags) + Linear Combination of Lagged forecast errors (upto q lags) </b> <br>
 
 The major objective is to find the value of p ,q and d. <br>
+
+### Finding the value of d
+The main purpose of d is to make time series stationary. But we need to be careful that we dont over do it because over differencing may look stationary but its will affect the model parameters. <br>
+The right order of differencing is the minimum differencing required to get a near-stationary series which roams around a defined mean and the <b> ACF</b> plot reaches to zero fairly quick. <br>
+
+If the autocorrelations are positive for many number of lags say 10 or more, then the series needs further differencing. On the other hand, id the lag 1 autocorrelation itself is too negative, then the series is probably <b>over-differencing</b><br>
+
+In a event you cannot really decide between two orders of differencing, then go with the order that gives the least standard deviation in the differenced series. <br>
+
+To check series to be stationary we use <b>Augmented Dickey Fuller test (adfuller ())</b> from the stats model package. <br>
+
+<b>P-value threshold = 0.05</b>
+if P-value is smaller than 0.05 then it is considered to have a stationary series. else, we need further differencing.
 
 
 
