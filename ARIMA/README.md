@@ -28,6 +28,29 @@ The most common way is to difference it. That is, substracting previous value fr
 The value of d, therefore, is the minimum number of differencing needed to make the series stationary. If the time series is already stationary, then d = 0 <br>
 Now what is "p" and "q" means ? <br>
 "p" is the order of AR. It refers to the number of lags of Y to be used as predictors, and "q" is the order of "Moving average (MA)", which refers to the number of lagged forecast errors that should go into the ARIMA model. <br>
+<br>
+A pure Auto regressive model is when Yt depends only on its own lags. that is, Yt is a function of the <b>"lags of Yt"</b> <br>
+
+Yt = a + b1Yt-1 + b2Yt-2 + ... + bnYt-n+ E1 <br>
+
+where, Yt-1 is the lag1 of the series, b1 is the coefficient of lag1 that the model estimates and a is the intercept term, also estimated by model. <br>
+
+Likewise, a pure Moving Average is one where Yt depends only on the lagged forecast errors. <br>
+Yt = a + E1 + b1Et-1 + b2Et-2 + bnEt-n <br>
+where the error terms are the errors of the autoregressie model of the respective lags. The errors Et and Et-1 are the errors from the following equations: <br>
+
+Yt = b1Yt-1 + b2Yt-2 + ... + b0Y0 + Et <br>
+Yt-1 = b1Yt-2 + b2Yt-3+ ... + b0Y0 + Et-1 <br>
+
+So final arima model will look like, <br>
+
+An ARIMA model is one where the time series was differenced at least once to make it stationary and you can combine the AR and the MA terms, SO the equation becomes <br>
+
+Predicted Yt = Constant + Linear combination Lags of Y (upto p lags) + Linear Combination of Lagged forecast errors (upto q lags) <br>
+
+The major objective is to find the value of p ,q and d. <br>
+
+
 
 
 
