@@ -60,7 +60,7 @@ In a event you cannot really decide between two orders of differencing, then go 
 
 To check series to be stationary we use <b>Augmented Dickey Fuller test (adfuller ())</b> from the stats model package. <br>
 
-<b>P-value threshold = 0.05</b>
+<b>"P-value threshold = 0.05"</b> <br>
 if P-value is smaller than 0.05 then it is considered to have a stationary series. else, we need further differencing.
 
 
